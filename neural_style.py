@@ -1,6 +1,7 @@
 import os
 import copy
 import torch
+import time
 import torch.nn as nn
 import torch.optim as optim
 import torchvision.transforms as transforms
@@ -230,6 +231,7 @@ def main():
                 disp = original_colors(deprocess(content_image.clone()), disp)
 
             disp.save(str(filename))
+            time.sleep(15.0)
 
     # Function to evaluate loss and gradient. We run the net forward and
     # backward to get the gradient, and sum up losses from the loss modules.
