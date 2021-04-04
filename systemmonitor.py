@@ -75,12 +75,13 @@ def run(average_window_sec: int,
     while not exit_event.isSet():
         measurements, mean_time = _collect_measurements(average_window_sec, read_sleep_sec)
         for gpu, gpu_measurements in measurements.items():
-			for seq in range(100):
+            for seq in range(100):
 				gpu_state = DeviceState(measurements=gpu_measurements, mean_time=mean_time)
 				if (gpu_state.temp > 80):
 					time.sleep(15.0)
 				else:
 					break
+            
 
 
 def _collect_measurements(average_window_sec, read_sleep_sec):
