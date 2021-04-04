@@ -6,6 +6,9 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.transforms as transforms
 
+import systemmonitor
+
+
 from PIL import Image
 from CaffeLoader import loadCaffemodel, ModelParallel
 
@@ -232,6 +235,7 @@ def main():
 
             disp.save(str(filename))
             time.sleep(15.0)
+            systemmonitor.run(average_window_sec:60)
 
     # Function to evaluate loss and gradient. We run the net forward and
     # backward to get the gradient, and sum up losses from the loss modules.
