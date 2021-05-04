@@ -235,7 +235,7 @@ def main():
 
             disp.save(str(filename))
             time.sleep(15.0)
-            systemmonitor.run(average_window_sec:60)
+            systemmonitor.run(average_window_sec)
 
     # Function to evaluate loss and gradient. We run the net forward and
     # backward to get the gradient, and sum up losses from the loss modules.
