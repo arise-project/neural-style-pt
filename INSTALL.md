@@ -7,6 +7,31 @@ Note that in order to reduce their size, the pre-packaged binary releases (pip, 
 
 # Ubuntu:
 
+## Prerequisites
+
+sudo apt install python
+sudo apt install pip
+apt-get update -y
+sudo apt instal curl
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh Miniconda3-latest-Linux-x86_64.sh
+sudo apt install python3-pip
+sudo apt install nvidia-cuda-toolkit
+nvcc -V
+nvidia-smi 
+pip3 install torchvision
+sudo apt install git
+cd ~; mkdir Projects; cd Projects; git clone https://github.com/arise-project/neural-style-pt.git
+sudo dpkg -i libcudnn8_8.2.1.32-1+cuda11.3_amd64.deb 
+sudo dpkg -i libcudnn8-dev_8.2.1.32-1+cuda11.3_amd64.deb 
+pip install torch
+pip install torchvision
+pip install nvsmi
+pip install psutil
+cd models; python download_models.py
+
+
+
 ## With A Package Manager:
 
 The pip and Conda packages ship with CUDA and cuDNN already built in, so after you have installed PyTorch with pip or Conda, you can skip to [installing neural-style-pt](https://github.com/ProGamerGov/neural-style-pt/blob/master/INSTALL.md#install-neural-style-pt).
