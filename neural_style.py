@@ -108,6 +108,7 @@ def main():
     content_layers = params.content_layers.split(',')
     style_layers = params.style_layers.split(',')
 
+    
     # Set up the network, inserting style and content loss modules
     cnn = copy.deepcopy(cnn)
     content_losses, style_losses, tv_losses = [], [], []
@@ -174,6 +175,7 @@ def main():
 
     for i, image in enumerate(style_images_caffe):
         print("Capturing style target " + str(i+1))
+        torch.cuda.empty_cache()
         for j in style_losses:
             j.mode = 'capture'
             j.blend_weight = style_blend_weights[i]
