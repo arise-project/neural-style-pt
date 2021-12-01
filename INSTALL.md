@@ -28,6 +28,7 @@ pip install torch
 pip install torchvision
 pip install nvsmi
 pip install psutil
+pip install koila
 cd models; python download_models.py
 
 

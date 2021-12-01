@@ -7,7 +7,7 @@ import torch.optim as optim
 import torchvision.transforms as transforms
 
 import systemmonitor
-
+from koila import LazyTensor, lazy
 
 from PIL import Image
 from CaffeLoader import loadCaffemodel, ModelParallel
@@ -456,7 +456,7 @@ class StyleLoss(nn.Module):
 
     def __init__(self, strength, normalize):
         super(StyleLoss, self).__init__()
-        self.target = torch.Tensor()
+        self.target = lazy(torch.Tensor())
         self.strength = strength
         self.gram = GramMatrix()
         self.crit = nn.MSELoss()
